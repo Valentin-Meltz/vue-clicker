@@ -3,8 +3,8 @@
         <div class="shop-attribut mb-4">
             <h2 class="font-bold">{{ item }}</h2>
         </div>
-        <div class="shop-btn rounded-2xl border-1 border-gray-300 p-1 w-1/2 flex justify-center">
-            <button @click="method" class="btn">Buy</button>
+        <div class="shop-btn">
+            <button @click="method" class="btn rounded-2xl border-1 border-gray-300 p-1 w-1/2 flex justify-center">Buy</button>
         </div>
     </div>
 </template>
