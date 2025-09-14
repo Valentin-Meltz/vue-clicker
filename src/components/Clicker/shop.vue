@@ -3,9 +3,7 @@
         <div class="shop-attribut mb-4">
             <h2 class="font-bold">{{ item }}</h2>
         </div>
-        <div class="shop-btn">
-            <button @click="method" class="btn rounded-2xl border-1 border-gray-300 p-1 w-1/2 flex justify-center">Buy</button>
-        </div>
+        <button @click="method" class="btn rounded-2xl border-1 p-1 w-1/2 flex justify-center">Buy</button>
     </div>
 </template>
 
@@ -44,11 +42,12 @@ export default {
     border-color: #42b883;
 }
 
-.shop-btn{
+.btn{
     font-weight: 600;
     transition: background-color 0.3s, transform 0.2s;
+    border-color: lightgray;
 }
-.shop-btn:hover {
+.btn:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     cursor: pointer;
