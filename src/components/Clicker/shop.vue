@@ -1,7 +1,8 @@
 <template>
     <div class="shop-card border-2 border-gray-300 rounded-lg p-4 m-4 flex flex-col justify-between items-center">
-        <div class="shop-attribut mb-4">
+        <div class="shop-attribut mb-4 flex flex-col items-center">
             <h2 class="font-bold">{{ item }}</h2>
+            <p class="text-sm text-gray-600">Cost: {{ cost }} cookies</p>
         </div>
         <button @click="method" class="btn rounded-2xl border-1 p-1 w-1/2 flex justify-center">Buy</button>
     </div>
@@ -15,7 +16,7 @@ export default {
       type: String,
       required: true
     },
-    imageSrc: {
+    cost: {
       type: String,
       required: true
     },
