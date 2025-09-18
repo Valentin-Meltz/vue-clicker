@@ -22,7 +22,7 @@
         <div class="shop-container flex justify-around items-center w-full h-3/10">
             <Shop item="Production Automatique" cost="150" :method="() => { if(cookies > productionAutoCost) startAutoProduction() }"/>
             <Shop item="Génération x2" :cost="generationCost" :method="() => { if (cookies > generationCost) updateGeneration() }"/>
-            <Shop item="Production Automatique x2" :cost="productionAutoCost" :method="() => { if (cookies > generationCost) updateProductionAuto() }"/>
+            <Shop item="Production Automatique x2" :cost="productionAutoCost" :method="() => { if (cookies > productionAutoCost) updateProductionAuto() }"/>
         </div>
     </div>
 </template>
@@ -47,6 +47,7 @@ export default {
           generation: 'getGeneration',
           productionAutoCost: 'getProductionAutoCost',
           generationCost: 'getGenerationCost',
+          
         })
     },
     methods: {
@@ -57,11 +58,19 @@ export default {
         }),
         ...mapActions({
             startAutoProduction: 'startAutoProduction',
-        })
+            loadState: 'loadState',
+            saveState: 'saveState',
+        }),
     },
     components: {
         Shop,
-    }
+    },
+    mounted() {
+        this.loadState();
+        setInterval(() => {
+            this.saveState();
+        }, 1000);
+    },
 }
 </script>
 
